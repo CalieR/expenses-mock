@@ -1,0 +1,20 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+hr {
+  color: black;
+  width: 75%;
+}
+
+thead tr {
+  text-align: left;
+}
+
+td,
+tr,
+th {
+  padding: 8px 16px;
+}
