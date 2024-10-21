@@ -12,10 +12,6 @@ const Table = (props: TableProps) => {
   const [tableRows, setTableRows] = useState(rows);
   const [sortAscending, setSortAscending] = useState<boolean>(true);
 
-  // Needed the utility Record type in order to 'loosen the object type': previously was using a type (Expense) that was too 'loose' to access the objects properties.
-  // 3 ways to solve the problem, I chose 'loosening the object type', allowing me to access the properties with a string key.
-  // can also tighten the index or cast the index
-
   const handleSortByColumn = (sortColumn: string) => {
     setSortAscending(!sortAscending);
     setTableRows(rows.sort(sortByColumn(sortColumn, sortAscending)));
