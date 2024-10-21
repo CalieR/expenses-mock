@@ -19,16 +19,39 @@ export const capitalise = (value: string) => {
 
 export const upperCase = (value: string | number) => {
   return value.toString().toUpperCase();
-}
+};
 
 export const defaultFormatter = (value: string | number) =>
   value.toLocaleString();
 
 // filtering functions
 
-// const filterItemsBy = (data: Expense[], columnName: string, value: string | number) => {
-//   return data.filter((row: Record<string, string | number>) => row[columnName] === value)
-// }
+export const filterItemsBy = (
+  dataToSort: Record<string, string | number>[],
+  columnName: string,
+  value: string | number,
+  operator: string
+) => {
+  return dataToSort.filter((row: Record<string, string | number>) =>
+    determineOperator(operator, row[columnName], value)
+  );
+};
+
+const determineOperator = (
+  operator: string,
+  rowValue: string | number,
+  value: string | number
+) => {
+  // add more conditions
+  switch (operator) {
+    case 'equals':
+      return rowValue === value;
+    case 'contains':
+      return rowValue.toString().includes(value.toString());
+    default:
+      return false;
+  }
+};
 
 // sorting functions
 
