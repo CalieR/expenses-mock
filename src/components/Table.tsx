@@ -44,6 +44,7 @@ const Table = (props: TableProps) => {
           ))}
         </tbody>
       </table>
+      {rows.length === 0 && <p className="m-4">No expense records to display!</p>}
     </div>
   );
 };

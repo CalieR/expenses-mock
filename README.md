@@ -14,6 +14,7 @@ Set up to add some additional functionality and improvements to the expenses app
 - [] Add filtering to the table
 - [] Add search to the table
 - [x] Set up tests
+- [ ] Explore other ways to handle the state (reducer, context)
 
 ## Rationale
 
@@ -24,3 +25,7 @@ I've used React Testing Library before, but not Vitest specifically, so I decide
 In a commercial setting I'd have probably headed straight to a library or a tool like TanStack to set up the table, to streamline data manipulation.  This project was originally a 1 hour task so I found an elegant html table solution which is perfect for displaying the data, and is also getting me to think about exactly how sorting and filtering actually work.  I will probably start again with a library once I've built this version out some more.
 
 For the timed test I created only 1 component (the Table) and manipulated the api response inside it, but the point of React components is to keep them as simple and reusable as possible, so the first thing I decided to do was make it dumb and get the expenseService to handle the heavy lifting.  This involved creating several additonal types!
+
+After that I added sorting.
+
+Then I thought about other ways to manage the state, even though the app is still small.  I began by setting up a reducer, initially with just the one action, to load the expenses.

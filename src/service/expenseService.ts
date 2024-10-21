@@ -29,7 +29,7 @@ const getExpensesData = async (): Promise<ApiResponse<Expense[]>> => {
   }
 };
 
-const columns: TableColumn[] = [
+export const columns: TableColumn[] = [
   {
     header: 'ID',
     accessor: 'id',
