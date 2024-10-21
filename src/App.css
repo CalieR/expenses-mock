@@ -18,3 +18,7 @@ tr,
 th {
   padding: 8px 16px;
 }
+
+select, input {
+  background-color: aliceblue;
+}
